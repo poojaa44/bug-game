@@ -21,9 +21,13 @@ const element = document.querySelector('#bg');
 
 console.log("Width: " + element.clientWidth + "px");
 console.log("Height: " + element.clientHeight + "px");
+console.log(start)
 
 function startGame() {
     isgameStart = true;
+ 
+ 
+
     time = setInterval(() => {
         blast.style.display = "none"
    
@@ -34,6 +38,7 @@ function startGame() {
         console.log(`ix ${iX} jx ${jX}`)
         mos.style.left = iX + 'px';
         mos.style.top = jX + 'px';
+    
 
     }, 1500)
 
@@ -48,6 +53,9 @@ function startGame() {
             timeline.classList.add("active")
             mos.style.display = "none";
             timeline.innerText = "Game Over"
+            start.disabled = true
+            start.classList.add('start')
+           
 
         } else {
 
@@ -76,6 +84,8 @@ mos.addEventListener("click", kill)
 
 
 reset.addEventListener("click", () => {
+    start.classList.remove('start')
+    start.disabled = false
     kills.pause();
     clearTimeout(time);
     clearTimeout(timer);
