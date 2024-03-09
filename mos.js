@@ -6,7 +6,7 @@ const counts = document.querySelector(".countDown");
 const timeline = document.querySelector(".countDown h2");
 const totalKill = document.querySelector(".total-kill");
 mos.style.display = "none";
-let kills = new Audio('ting.mp3')
+let kills = new Audio('kill.wav')
 let gameover = new Audio('gameover.mp3')
 let music = new Audio('music.mp3')
 let countdown = 0;
@@ -17,19 +17,25 @@ const blast = document.querySelector("#blast");
 let iX;
 let jX;
 isgameStart = false;
+const element = document.querySelector('#bg');
+
+console.log("Width: " + element.clientWidth + "px");
+console.log("Height: " + element.clientHeight + "px");
 
 function startGame() {
     isgameStart = true;
     time = setInterval(() => {
         blast.style.display = "none"
+   
         mos.style.display = "block"
-        iX = Math.floor(Math.random() * 550 + 1);
-        jX = Math.floor(Math.random() * 550 + 1);
-        console.log(iX,jX);
+
+        iX = Math.floor(Math.random() * (element.clientWidth - 70 )  );
+        jX = Math.floor(Math.random() * (element.clientHeight - 70 )  );
+        console.log(`ix ${iX} jx ${jX}`)
         mos.style.left = iX + 'px';
         mos.style.top = jX + 'px';
 
-    }, 1000)
+    }, 1500)
 
     timer = setInterval(countdown, 1000);
 
@@ -71,7 +77,6 @@ mos.addEventListener("click", kill)
 
 reset.addEventListener("click", () => {
     kills.pause();
-    // music.pause();
     clearTimeout(time);
     clearTimeout(timer);
     totalTime = 30;

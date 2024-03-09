@@ -17,9 +17,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 50%;
+  width: 60%;
   height: 80%;
-  margin: 0.5rem 2rem;
+ 
 }
 .container .game-box #bg {
   width: 100%;
@@ -81,6 +81,56 @@ span {
   color: red;
 }
 
+#splash{
+  filter: invert(100) hue-rotate(60deg);
+}
 .countDown {
   margin-top: 2rem;
 }/*# sourceMappingURL=style.css.map */
+/* media queries */
+
+@media (max-width: 680px) {
+  .container {
+   padding: 0.5rem;
+    flex-direction: column;
+  }
+  .game-info {
+    width: 100%;
+    height: 100%;
+  }
+  .container .game-box {
+    width: 100%;
+    height: 100%;
+   
+  }
+  .game-info .box {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .game-info .box .countDown h2 {
+
+    font-size: 1rem;
+  }
+  .game-info .box .countDown h2.active {
+    font-size: 1rem;
+
+  }
+  .container .game-box #mos {
+    width: 20px;
+    height: 20px;
+
+  }
+  .container .game-box #blast {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+  }
+  
+}
