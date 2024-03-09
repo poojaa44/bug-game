@@ -40,7 +40,7 @@ function startGame() {
         mos.style.top = jX + 'px';
     
 
-    }, 1500)
+    }, 1000)
 
     timer = setInterval(countdown, 1000);
 
@@ -58,9 +58,7 @@ function startGame() {
            
 
         } else {
-
             timeline.classList.add("active")
-
             timeline.innerText = "Time Remaining :" + totalTime + " Secs"
             totalTime--;
         }
