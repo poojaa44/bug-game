@@ -21,25 +21,18 @@ const element = document.querySelector('#bg');
 
 console.log("Width: " + element.clientWidth + "px");
 console.log("Height: " + element.clientHeight + "px");
-console.log(start)
 
 function startGame() {
     isgameStart = true;
- 
- 
-
+    music.play()
     time = setInterval(() => {
         blast.style.display = "none"
-   
         mos.style.display = "block"
-
         iX = Math.floor(Math.random() * (element.clientWidth - 70 )  );
         jX = Math.floor(Math.random() * (element.clientHeight - 70 )  );
         console.log(`ix ${iX} jx ${jX}`)
         mos.style.left = iX + 'px';
         mos.style.top = jX + 'px';
-    
-
     }, 1000)
 
     timer = setInterval(countdown, 1000);
@@ -52,11 +45,10 @@ function startGame() {
             kills.pause();
             timeline.classList.add("active")
             mos.style.display = "none";
+            music.pause()
             timeline.innerText = "Game Over"
             start.disabled = true
             start.classList.add('start')
-           
-
         } else {
             timeline.classList.add("active")
             timeline.innerText = "Time Remaining :" + totalTime + " Secs"
@@ -82,6 +74,7 @@ mos.addEventListener("click", kill)
 
 
 reset.addEventListener("click", () => {
+    music.pause()
     start.classList.remove('start')
     start.disabled = false
     kills.pause();
