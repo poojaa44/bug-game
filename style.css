@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 .container {
   display: flex;
   justify-content: center;
@@ -40,16 +41,26 @@
 }
 .container button {
   background-color: #3D5B59;
-  border: none;
-  margin-top: 2rem;
+  border: 2px solid transparent;
+    margin-top: 2rem;
   padding: 0.5rem 2rem;
   color: #FCB5AC;
   font-weight: 700;
 }
-.container button:hover {
+.container button:disabled {
+  background-color: #bfd7d6;
+  
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  font-weight: 700;
+  cursor: not-allowed;
+}
+.container button:hover:not(:disabled) {
   background-color: #f7ccc6;
   border: 2px solid #3D5B59;
   color: #3D5B59;
+  cursor: pointer;
 }
 
 .game-info {
@@ -86,7 +97,11 @@ span {
 }
 .countDown {
   margin-top: 2rem;
-}/*# sourceMappingURL=style.css.map */
+
+  
+}
+
+/*# sourceMappingURL=style.css.map */
 /* media queries */
 
 @media (max-width: 680px) {
@@ -111,11 +126,7 @@ span {
   h1 {
     font-size: 2rem;
   }
-  .start{
-    opacity: 20;
-    background-color: #3D5B59;
-    cursor: not-allowed;
-  }
+ 
   .game-info .box .countDown h2 {
 
     font-size: 1rem;
@@ -138,3 +149,5 @@ span {
   }
   
 }
+
+
