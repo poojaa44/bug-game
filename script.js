@@ -33,7 +33,6 @@ function startGame() {
       mos.style.display = "block";
       iX = Math.floor(Math.random() * (element.clientWidth - 70));
       jX = Math.floor(Math.random() * (element.clientHeight - 70));
-      console.log(`ix ${iX} jx ${jX}`);
       mos.style.left = iX + 'px';
       mos.style.top = jX + 'px';
     }, 1000);
