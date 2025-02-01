@@ -74,6 +74,8 @@ mos.addEventListener("click", kill)
 
 
 reset.addEventListener("click", () => {
+    // music.pause()
+    music.currentTime = 0 
     music.pause()
     start.classList.remove('start')
     start.disabled = false
